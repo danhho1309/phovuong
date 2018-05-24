@@ -1393,8 +1393,13 @@ console.log('i2');
 				var phone = $("#phone").val();
 				var people = $("#people-number").val();
 				var time = $("#time-alt").val();
+				var timeSplit = time.split(':');
+				if(timeSplit[1].length==1) {
+					time = timeSplit[0] + ':0' + timeSplit[1];
+				}
 				var date = $("#date").val();
 				var datetime = date + ' ' + time +':00';
+				
 				var note = $("#special-request").val();
 				
 				$.ajax({
