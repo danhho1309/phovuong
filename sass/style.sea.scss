@@ -1,0 +1,1676 @@
+/*  =======================================================================
+    * Template Name: Spicy Restaurant
+    * Template URI: https://www.mohamdhasan.pro
+    * Author: Mohamed Hasan
+    * Author URI: https://www.mohamdhasan.pro
+    * Description: Perfo - Responsive Bootstrap 4 Restaurant HTML Template
+    * Version: 1.0
+    * License: GPL v2 or later
+    * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+    * Tags: html, template, portfolio, marketing, designer, personal
+======================================================================= */
+
+/* ===================================================================
+    Table of content:
+    1.  General Styles
+    2.  Helpers
+    3.  Search Popup
+    4.  Hero Section
+    5.  Divider Section
+    6.  About Section
+    7.  Features Section
+    8.  Dishes Section
+    9.  Menu Section
+    10.  Event Section
+    11.  Chefs Section
+    12. Reservation Section
+    13. Testimonials Section
+    14. Newsletter Section
+    15. Footer
+    16. Into Section [About Page]
+    17. Vision Section [About Page]
+    18. Statistics Section [About Page]
+    19. Gallery Section [About Page]
+    20. Signature Section [Menu Page]
+    21. Separator Section [Menu Page]
+    22. Main Course Section [Menu Page]
+    23. Lunch Section [Menu Page]
+    24. Contact Section [Contact Page]
+    25. Branches Section [Contact Page]
+    26. Preloader
+    27. Scroll To Top Button
+    28. Error 404 Section [404 Page]
+===================================================================  */
+
+$brand-primary: #4eb0af;
+
+
+// ===================================================================
+//    IMPORT PARTIALS
+// ===================================================================
+@import "partials/variables"; // Template variables
+@import "partials/mixins";    // Template mixins
+@import "partials/general";   // General styles
+@import "partials/helpers";   // Template helper classes
+
+
+
+/* ===================================================================
+        NAVBAR
+===================================================================  */
+nav.navbar {
+    background: none;
+    transition: all 0.5s;
+    z-index: 9996;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &.active {
+        background: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navbar Brand */
+    .navbar-brand {
+        max-width: 100px;
+    }
+
+    /* Navbar Link */
+    a.nav-link {
+        margin: 0 2px;
+        font-weight: 400;
+
+        &:hover, &.active {
+            color: $brand-primary;
+        }
+    }
+
+    /* Navbar Toggle btn */
+    .navbar-toggler {
+        outline: none !important;
+        margin-top: 20px;
+
+        &:focus {
+            border: none;
+        }
+        span {
+            width: 25px;
+            margin: 5px;
+            display: block;
+            height: 2px;
+            background: #333;
+            transition: all 0.2s;
+        }
+
+        &.active {
+            span {
+                &:first-of-type {
+                    transform: rotate(45deg) translate(10px);
+                }
+                &:last-of-type {
+                    transform: rotate(-45deg) translate(10px);
+                }
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    /* Navbar Search btn */
+    .search-btn {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        color: #fff !important;
+        text-align: center;
+        border-radius: 50%;
+        background: $brand-primary;
+        cursor: pointer;
+        font-size: 0.8em;
+        padding: 0 !important;
+        margin-left: 15px !important;
+        position: relative;
+        border: 1px solid $brand-primary;
+        margin-top: 4px !important;
+
+        &::before {
+            content: '';
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: none;
+            border: 2px solid $brand-primary;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            display: block;
+        }
+    }
+}
+
+.dropdown-menu {
+    border-radius: 0;
+    padding: 0;
+    margin-top: 30px;
+}
+.dropdown-menu a {
+    text-transform: none !important;
+}
+.dropdown-menu a:active {
+    background-color: #fff;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -2px;
+    font-size: 1em;
+}
+
+.menu-large {
+    position: static !important;
+}
+
+/* Mega Menu */
+.megamenu {
+    width: 100%;
+    padding: 40px 30px 20px;
+    margin-top: 20px;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    strong {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    div[class*='col-'] {
+        margin-bottom: 15px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        a {
+            padding: 3px 0 !important;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9em !important;
+
+            &:hover {
+                background: none;
+                color: $brand-primary !important;
+
+            }
+        }
+
+        a.btn-template {
+            padding: 0 !important;
+            color: #fff !important;
+
+            &:hover {
+                color: $brand-primary !important;
+            }
+        }
+    }
+
+    .product-col {
+        border-left: 1px solid #eee;
+    }
+
+    .product-image {
+        img {
+            max-width: 250px;
+            margin: 0 auto 20px;
+        }
+    }
+
+    strong.price {
+        font-weight: 500;
+    }
+
+    ul.rate {
+        li {
+            margin: 0;
+        }
+    }
+
+    .services-block {
+        margin-top: 15px;
+        .item {
+            margin: 15px 0;
+        }
+        span {
+            font-weight: 600;
+            font-size: 0.95em;
+            display: block;
+        }
+        small {
+            display: block;
+            color: #555;
+        }
+
+        i {
+            font-size: 1.8em;
+            margin-right: 10px;
+        }
+    }
+
+    .dish {
+        .image {
+            padding: 20px 20px 0 0;
+        }
+        p {
+            font-size: 0.8em;
+            font-weight: 300;
+            color: #444;
+        }
+    }
+
+}
+
+
+
+/* Media Query Navbar -------------------------------------------- */
+@media (max-width: $screen-lg) {
+    nav.navbar {
+        max-height: 400px;
+        overflow-y: auto;
+        background: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+        .container {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            padding-right: 0;
+            transform: translateX(10px);
+        }
+
+        .search-btn {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        SEARCH POPUP
+===================================================================  */
+.search-popup {
+    display: none;
+    transform: translateX(-500px);
+    transition: all 0.5s;
+    background: rgba(255, 255, 255, 0.97);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    padding: 20px;
+
+    &.visible {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.search-popup-inner {
+    width: 100%;
+    height: 100%;
+
+    .close-btn {
+        color: #333;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.7s;
+
+        &.visible {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+
+    form {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .form-group {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.7s;
+
+        &.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .form-control {
+            border-color: #ccc;
+            font-weight: 400;
+        }
+    }
+
+    h2 {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.7s;
+        margin-bottom: 30px;
+
+        &.visible {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .form-control {
+        border-radius: 50px;
+        padding: 0 30px;
+        height: 60px;
+        line-height: 60px;
+        border: 1px solid #777;
+        color: #333;
+        background: none;
+        font-family: $base-font-family;
+        font-weight: 300;
+        width: 100%;
+
+        &:focus {
+            border-color: $brand-primary;
+        }
+
+        @include placeholder() {
+            font-weight: 300;
+            font-family: $base-font-family;
+            color: #777;
+            font-size: 1.1em;
+        }
+    }
+
+    button {
+        border-radius: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: $brand-primary;
+        color: #fff;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: none;
+        font-family: $base-font-family;
+        padding: 0 30px;
+        text-transform: uppercase;
+    }
+}
+
+/* Media Query Search Popup----------------------------------------- */
+@media (max-width: $screen-md) {
+    .search-popup-inner {
+        button {
+            width: 100%;
+            top: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        HERO SECTION
+===================================================================  */
+section.hero {
+    position: relative;
+
+    /* Home Hero Section */
+    &.hero-home {
+        padding: 0;
+        .container {
+            min-height: 100vh;
+        }
+    }
+
+    /* Other pages Hero Section */
+    &.hero-page {
+        padding: 130px 0;
+
+        .hero-text {
+            font-size: 1.2em;
+            line-height: 1.7em;
+            color: #555;
+        }
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    span.address {
+        font-weight: 300;
+        margin-top: 15px;
+    }
+
+    span.heading-bg-text {
+        font-size: 12em;
+        min-width: 2000px;
+        text-align: center;
+        text-transform: none;
+        font-weight: 600;
+        font-family: $base-font-family;
+    }
+
+    p.hero-text {
+        margin: 20px 0 30px;
+        font-weight: 300;
+        font-size: 1.05em;
+    }
+
+    .CTAs {
+        a {
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Media Query Hero Section --------------------------------------- */
+@media (max-width: $screen-md) {
+    section.hero {
+        &.hero-home, &.hero-page {
+            padding: 100px 0;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        DIVIDER SECTION
+===================================================================  */
+section.divider {
+
+    p {
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    a {
+        font-weight: 600;
+        font-family: $secondary-font-family;
+        padding: 3px 30px;
+        background: #fff;
+        margin-left: 10px;
+        border-radius: 50px;
+        color: $brand-primary;
+        @extend .has-shadow;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: none;
+            border-color: #fff;
+            color: #fff;
+        }
+
+        &.google-play, &.appstore {
+            padding: 7px 30px;
+            font-weight: 400;
+        }
+    }
+}
+
+/* Media Query Divider Section --------------------------------------- */
+@media (max-width: $screen-md) {
+    section.divider {
+        a {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+/* ===================================================================
+        ABOUT SECTION
+===================================================================  */
+section.about {
+    p {
+        margin: 30px 0;
+    }
+}
+
+
+
+/* ===================================================================
+        FEATURES SECTION
+===================================================================  */
+section.features {
+    .row {
+        padding: 20px 0;
+    }
+    .item {
+        padding: 40px 20px;
+        border: 1px solid transparent;
+        transition: all 0.5s;
+
+        &:hover {
+            border-color: $brand-primary;
+        }
+    }
+
+    .icon {
+        width: 100%;
+
+        img {
+            max-width: 50px;
+        }
+    }
+
+    h3 {
+        margin-top: 15px;
+    }
+
+    p {
+        font-weight: 300;
+        color: #555;
+        line-height: 1.6em;
+        font-size: 0.95em;
+        margin-top: 15px;
+    }
+}
+
+
+
+/* ===================================================================
+    DISHES SECTION
+===================================================================  */
+section.dishes {
+
+    /* Page section refer to a clone of the same section present in home page */
+    &.page-section {
+        .item {
+            margin: 0 !important;
+            margin-bottom: 60px !important;
+            padding: 70px 35px;
+        }
+    }
+
+    .owl-carousel .owl-stage-outer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .item {
+        margin: 5px 20px !important;
+        padding: 100px 35px;
+        border: 1px solid transparent;
+        position: relative;
+        background: #fff;
+
+        &.sale {
+            border: 1px solid $brand-primary;
+            @extend .has-pattern;
+        }
+
+        .image {
+            margin-bottom: 20px;
+        }
+
+
+        img {
+            max-width: 180px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.7em;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        ul {
+            margin: 20px 0 0;
+            font-family: $secondary-font-family;
+            font-size: 1.5em;
+
+            .current {
+                color: $brand-primary;
+                font-weight: 700;
+            }
+            .original {
+                color: #999;
+                text-decoration: line-through;
+                font-weight: 300;
+            }
+        }
+
+        .ribbon {
+            top: -30px;
+            left: 60px;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    MENU SECTION
+===================================================================  */
+section.menu {
+    .nav-tabs {
+        text-align: center;
+        border-radius: 100px;
+        border: 1px solid $brand-primary;
+        padding: 15px;
+        background: #fff;
+
+        .nav-link {
+            background: none;
+            color: #222;
+            text-transform: uppercase;
+            border-radius: 50px;
+            margin: 0;
+            border: none;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 0.95em;
+
+            &.active {
+                background: $brand-primary;
+                color: #fff;
+            }
+        }
+    }
+
+    .dish {
+        padding: 20px 25px;
+        border-radius: 80px;
+        background: #fff;
+        margin: 20px 0;
+        transition: all 0.3s;
+        cursor: default;
+
+        &:hover {
+            background: $brand-primary;
+            color: #fff;
+
+            .price {
+                color: #fff;
+            }
+        }
+    }
+
+    .price {
+        font-family: $secondary-font-family;
+        font-weight: 500;
+        color: $brand-primary;
+        transition: all 0.3s;
+    }
+}
+
+/* Media Query Menu Section --------------------------------------- */
+@media (max-width: $screen-md) {
+    section.menu {
+        .nav-tabs {
+            border-radius: 20px;
+            .nav-item {
+                width: 100%;
+            }
+            .nav-link {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    EVENTS SECTION
+===================================================================  */
+section.events {
+    div[class*="col-"] {
+        &:first-of-type {
+            padding-right: 0;
+        }
+        &:last-of-type {
+            padding-left: 0;
+        }
+    }
+
+    .image {
+        height: 100%;
+        min-height: 300px;
+        border: 1px solid $brand-primary;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .details {
+        height: 100%;
+        padding: 40px;
+        border: 1px solid $brand-primary;
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .item {
+        margin: 30px;
+        margin-bottom: 50px;
+
+        h3 {
+            margin-bottom: 0;
+        }
+        .date {
+            letter-spacing: 0.07em;
+        }
+        p {
+            font-weight: 300;
+            margin: 20px 0;
+            font-size: 0.95em;
+            line-height: 1.6em;
+        }
+    }
+
+}
+
+/* Media Query Events Section --------------------------------------- */
+@media (max-width: $screen-lg) {
+    section.events {
+        padding: 15px 40px;
+
+        .item {
+            margin: 20px;
+            box-shadow: none !important;
+        }
+        div[class*="col-"] {
+            &:first-of-type {
+                padding-right: 15px !important;
+            }
+            &:last-of-type {
+                padding-left: 15px !important;
+            }
+        }
+
+        .image {
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0;
+            border-right: 1px solid $brand-primary;
+            border-bottom: none;
+        }
+
+        .details {
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 20px;
+            border-left: 1px solid $brand-primary;
+            border-top: none;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    CHEFS SECTION
+===================================================================  */
+section.chefs {
+    .item {
+        transition: all 0.5s;
+        border: 1px solid transparent;
+        margin: 20px;
+        overflow: hidden;
+
+        &:hover {
+            border-color: $brand-primary;
+
+            img {
+                filter: grayscale(0);
+            }
+            .details {
+                background: $brand-primary;
+                border-color: $brand-primary;
+
+                h3, span {
+                    color: #fff;
+                }
+            }
+            .social-icons {
+                a {
+                    background: #fff;
+                    color: $brand-primary;
+                }
+            }
+        }
+
+        .image {
+            padding: 20px 20px 0;
+        }
+        img {
+            height: 300px;
+            width: auto;
+            transition: all 0.5s;
+            filter: grayscale(100%);
+        }
+
+        .details {
+            padding: 20px;
+            transition: all 0.5s;
+            border: 1px solid transparent;
+            border-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 0;
+            transition: all 0.5s;
+        }
+        span {
+            color: #aaa;
+            font-weight: 300;
+            font-size: 0.9em;
+            transition: all 0.5s;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+            a {
+                width: 30px;
+                height: 30px;
+                line-height: 32px;
+                text-align: center;
+                border-radius: 50%;
+                background: #222;
+                color: #fff;
+                text-decoration: none;
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    RESERVATION SECTION
+===================================================================  */
+section.reservation {
+    form {
+        padding: 90px 50px 70px;
+        border: 1px solid $brand-primary;
+        position: relative;
+
+        .star {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: $brand-primary;
+            color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+            left: 100px;
+        }
+    }
+}
+
+
+/* Media Query Reservation Section --------------------------------------- */
+@media (max-width: $screen-lg) {
+    section.reservation {
+        .form-holder {
+            margin: 20px;
+        }
+        form {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+
+/* ===================================================================
+    TESTIMONIALS SECTION
+===================================================================  */
+section.testimonials {
+
+    .owl-stage-outer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .quote {
+        width: 60px;
+        position: absolute;
+        top: -45px;
+        left: 60px;
+        z-index: -1;
+    }
+
+    .user {
+        transform: translateY(-35px);
+
+        .profile {
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        img {
+            max-width: 150px;
+            padding: 4px;
+            border: 2px solid $brand-primary;
+        }
+        ul.rate {
+            margin-bottom: 0;
+            margin-top: 10px;
+            li {
+                padding: 0;
+                margin: 0;
+                font-size: 14px;
+                color: #ddd;
+
+                &.active {
+                    color: $brand-primary;
+                }
+            }
+        }
+
+        h4 {
+            margin: 0;
+            font-weight: 500 !important;
+        }
+    }
+
+    .profile {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+
+    .item {
+        padding: 40px;
+        padding-top: 0;
+        background: #fff;
+        position: relative;
+    }
+
+    p {
+        color: #777;
+    }
+}
+
+
+/* Media Query Testimonials Section --------------------------------------- */
+@media (max-width: $screen-lg) {
+    section.testimonials {
+        .item {
+            box-shadow: none !important;
+            border: 1px solid $brand-primary;
+        }
+    }
+}
+
+
+/* ===================================================================
+    NEWSLETTER SECTION
+===================================================================  */
+section.newsletter {
+    background: #151515;
+    padding: 100px 0;
+
+    h2 {
+        color: #fff;
+    }
+
+    p {
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 50px;
+        padding: 0 30px;
+        height: 60px;
+        line-height: 60px;
+        border: 1px solid #444;
+        color: #fff;
+        background: none;
+        font-family: $base-font-family;
+        font-weight: 300;
+
+        &:focus {
+            border-color: $brand-primary;
+        }
+
+        @include placeholder() {
+            font-weight: 300;
+            font-family: $base-font-family;
+            color: #444;
+        }
+    }
+
+    button {
+        border-radius: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: $brand-primary;
+        color: #fff;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: none;
+        font-family: $base-font-family;
+        padding: 0 30px;
+        text-transform: uppercase;
+    }
+}
+
+/* Media Query Search Popup----------------------------------------- */
+@media (max-width: $screen-md) {
+    section.newsletter {
+        padding-bottom: 150px !important;
+        button {
+            width: 100%;
+            top: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    FOOTER
+===================================================================  */
+footer.main-footer {
+    padding: 100px 0 0;
+    background: #111;
+    color: #555;
+
+    p {
+        font-weight: 300;
+    }
+
+    a {
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+
+    a i, li i {
+        color: $brand-primary;
+    }
+
+    ul.contact-details {
+        margin-top: 20px;
+        li {
+            margin-bottom: 7px;
+            i {
+                min-width: 30px;
+                text-align: center;
+            }
+        }
+    }
+
+    .logo {
+        max-width: 90px;
+        margin-bottom: 20px;
+    }
+
+    ul.site-links {
+        margin-right: 30px;
+        margin-top: 25px;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+
+    .opening-hours {
+        margin-top: 30px;
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #222;
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        span.day {
+            min-width: 20px;
+        }
+
+    }
+
+    .copyrights {
+        padding: 30px 0;
+        margin-top: 100px;
+        background: #0d0d0d;
+
+        ul, p {
+            margin: 0;
+        }
+
+        li {
+            padding: 0 5px;
+        }
+    }
+
+}
+
+/* Media Query Footer --------------------------------------- */
+@media (max-width: $screen-lg) {
+    footer.main-footer {
+        .copyrights {
+            text-align: center !important;
+
+            ul {
+                margin-top: 15px;
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        INTRO SECTION [ABOUT PAGE]
+===================================================================  */
+section.intro {
+    a {
+        margin-top: 20px;
+    }
+}
+
+
+
+/* ===================================================================
+        VISION SECTION [ABOUT PAGE]
+===================================================================  */
+section.vision {
+    blockquote {
+        border: none;
+        p {
+            &::first-letter {
+                font-size: 3.5em;
+                margin-right: 5px;
+                font-weight: 700;
+                color: $brand-primary;
+            }
+
+            font-weight: 300;
+            color: #999;
+            line-height: 1.7em;
+        }
+
+        h3 {
+            color: #333;
+            font-weight: 600;
+            font-size: 1.6em;
+            margin: 0;
+        }
+
+        .blockquote-footer {
+            margin-top: 20px;
+
+            &::before {
+                content: '';
+                width: 30px;
+                height: 2px;
+                background: $brand-primary;
+                display: inline-block;
+                margin-top: 15px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        STATISTICS SECTION [ABOUT PAGE]
+===================================================================  */
+section.statistics.statistics-about {
+    p {
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+    .icon {
+        width: 50px;
+        height: 50px;
+        margin: 10px auto 30px;
+        img[src*="clients"] {
+            max-width: 60px;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        GALLERY SECTION [ABOUT PAGE]
+===================================================================  */
+section.gallery {
+
+    .item {
+        img {
+            height: 100% !important;
+        }
+        position: relative;
+    }
+
+    .owl-dots {
+        margin-top: 30px;
+    }
+}
+
+
+
+
+/* ===================================================================
+        SIGNATURE SECTION [MENU PAGE]
+===================================================================  */
+section.signature-dishes, section.main-course, section.lunch {
+    .dish {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 100px;
+        background: #fafafa;
+        cursor: default;
+        transition: all 0.3s;
+
+        &:hover {
+            background: $brand-primary;
+            h4, .tags, .price {
+                color: #fff;
+            }
+        }
+
+        h4, .tags, .price {
+            transition: all 0.3s;
+        }
+
+        .image {
+            min-width: 60px;
+            max-width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 30px;
+        }
+        img {
+            border-radius: 50%;
+            padding: 2px;
+            border: 1px solid $brand-primary;
+        }
+
+        .details {
+            width: 100%;
+        }
+
+        h4 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .price {
+            font-weight: 700;
+            font-family: $secondary-font-family;
+            color: $brand-primary;
+            margin-right: 20px;
+            font-size: 1.2em;
+        }
+
+        .tags {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+    }
+}
+
+
+
+
+/* ===================================================================
+        SEPARATOR SECTION [MENU PAGE]
+===================================================================  */
+section.menu-separator {
+    background-size: cover !important;
+    height: 500px;
+    background-attachment: fixed !important;
+}
+
+
+
+
+/* ===================================================================
+        MAIN COURSE SECTION [MENU PAGE]
+===================================================================  */
+section.main-course {
+    .dish {
+        background: #fff;
+        padding: 15px 30px;
+        .price {
+            margin-right: 0;
+        }
+        h4 {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        LUNCH SECTION [MENU PAGE]
+===================================================================  */
+section.lunch {
+    .dish {
+        padding: 15px 30px;
+        .price {
+            margin-right: 0;
+        }
+        h4 {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+/* ===================================================================
+        CONTACT SECTION [CONTACT PAGE]
+===================================================================  */
+section.contact {
+    #map {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .map-holder {
+        padding: 5px;
+        border: 1px solid $brand-primary;
+    }
+
+    .contact-details {
+        width: calc(100% + 150px);
+        transform: translateX(-150px);
+        padding: 70px 30px;
+        background: $brand-primary;
+        color: #fff;
+
+        h2 {
+            color: #fff;
+        }
+
+        strong {
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+    }
+
+    .form-holder {
+        padding: 80px 50px 40px;
+        border: 1px solid $brand-primary;
+        background: #fff;
+        position: relative;
+
+        .star {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: $brand-primary;
+            color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+            left: 100px;
+        }
+    }
+}
+
+
+/* Media Query Contact Section ------------------------------------- */
+@media (max-width: $screen-lg) {
+    section.contact {
+        .contact-details {
+            width: 100%;
+            transform: none;
+        }
+
+        .form-holder {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+
+
+
+/* ===================================================================
+        Branches SECTION [CONTACT PAGE]
+===================================================================  */
+section.branches {
+    padding: 150px 0 110px;
+    .row {
+
+        .branch {
+            margin-bottom: 40px;
+        }
+
+        strong {
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .line {
+            width: 50px;
+            height: 2px;
+            background: #555;
+            margin: 15px 0;
+        }
+
+        a {
+            font-size: 0.9em;
+            color: #555;
+            &:hover {
+                color: $brand-primary;
+            }
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+
+
+/* ===================================================================
+    PRELOADER
+===================================================================  */
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9999;
+
+    .preloader-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .circle-big {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid $brand-primary;
+        border-top-color: #ddd;
+        animation: spin 3s infinite linear;
+        position: absolute;
+        top: calc(50% - 73px);
+        left: calc(50% - 73px);
+    }
+
+    .circle-small {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid $brand-primary;
+        border-left-color: #ddd;
+        margin-top: 13px;
+        margin-left: 13px;
+        animation: spin-reverse 4s infinite linear;
+        position: absolute;
+        top: calc(50% - 70px);
+        left: calc(50% - 70px);
+
+    }
+    img {
+        max-width: 50px;
+        position: absolute;
+        top: calc(50% - 28px);
+        left: calc(50% - 22px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* ===================================================================
+        SCROLL TO TOP BUTTON
+===================================================================  */
+#scrollTop {
+    background: $brand-primary;
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: fixed;
+    top: calc(50% - 20px);
+    right: -110px;
+    z-index: 9998;
+    font-size: 0.8em;
+    @extend .has-shadow;
+    transition: all 0.3s;
+
+    &.active {
+        right: -64px;
+    }
+
+    &:hover {
+        right: -10px;
+    }
+
+    i {
+        margin: 0 10px;
+    }
+}
+
+
+
+/* ===================================================================
+        ERROR 404 PAGE
+===================================================================  */
+section.error404 {
+    padding: 0 20px;
+    position: relative;
+
+    .image {
+        background: url(../img/404.svg) no-repeat;
+        background-size: 100% !important;
+        background-position: center center !important;
+        max-width: 400px;
+        width: 350px;
+        min-height: 280px;
+    }
+
+    .container {
+        min-height: 100vh;
+    }
+
+    &::before {
+        content: '404';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14em;
+        color: $brand-primary;
+        opacity: 0.1;
+        font-family: $secondary-font-family;
+        font-weight: 700;
+    }
+
+    h2 {
+        color: #555;
+    }
+
+    strong {
+        font-size: 7em;
+        font-family: $secondary-font-family;
+    }
+
+    a {
+        margin-top: 30px;
+    }
+}

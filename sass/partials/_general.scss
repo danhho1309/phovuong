@@ -1,0 +1,251 @@
+/* ===================================================================
+    GENERAL STYLES
+===================================================================  */
+
+/** Montserrate & Poppins Google Font **/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,500,600,700|Poppins:300,400,500,600,700');
+
+a, a:focus, a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+span, i {
+    display: inline-block;
+}
+
+body {
+    font-family: $base-font-family !important;
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}
+
+.pgae-holder {
+    overflow: hidden;
+}
+
+section {
+    padding: $section-padding 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+section header {
+    margin-bottom: 70px;
+}
+
+.scrollUp {
+    transform: translateY(-110%);;
+}
+
+.animsition {
+    z-index: 9998;
+}
+
+.breadcrumb {
+    background: none;
+    text-align: center;
+    a {
+        color: $brand-primary;
+        text-transform: uppercase;
+    }
+    li {
+        text-transform: uppercase;
+        font-weight: 400;
+        &.active {
+            color: #999;
+        }
+        &::before {
+            color: #999;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.text-bg, .text-bg-gray {
+    font-size: 12em;
+    font-weight: 800;
+    color: #fff;
+    opacity: 0.04;
+    @include position(absolute, $top: 50%, $left: 50%);
+    transform: translate(-50%, -50%);
+    width: 2000px;
+    text-align: center;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.text-bg-gray {
+    color: #333;
+}
+
+.btn-sm {
+    font-size: 0.8em !important;
+}
+
+.heading-bg-text {
+    font-size:3em;
+    font-weight: 800;
+    color: #333;
+    opacity: 0.03;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: inherit;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    z-index: -1;
+    width: 2000px;
+    text-align: center;
+}
+
+.heading-bg-text-gray {
+    @extend .heading-bg-text;
+    color: #000;
+}
+
+.pagination {
+    .page-link {
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        border-radius: 50% !important;
+        border: 1px solid #ddd;
+        color: #777;
+        padding: 0;
+        text-align: center;
+        margin: 0 5px;
+        margin-top: 40px;
+
+        &.active {
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            background: $brand-primary;
+            color: #fff;
+            border-color: $brand-primary;
+            position: relative;
+            transform: translateY(3px);
+
+            &::before {
+                content: '';
+                min-width: 36px;
+                min-height: 36px;
+                border: 2px solid $brand-primary;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@include scrollbars(5px, $brand-primary, #fff);
+
+/** TYPOGRAPHY **/
+h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font-family;
+    margin: 10px 0;
+    font-weight: $heading-font-weight-bold;
+    color: $heading-color;
+}
+
+
+h1, .h1, .display-1 { font-size: 3em;   }
+h2, .h2, .display-2 { font-size: 2.1em; }
+h3, .h3, .display-3 { font-size: 1.3em; }
+h4, .h4, .display-4 { font-size: 1.1em; }
+h5, .h5, .display-5 { font-size: 0.95em;   }
+h6, .h6, .display-6 { font-size: 0.8em; }
+
+h2 {
+    position: relative;
+    line-height: 1.2em;
+    z-index: 9995;
+
+    small {
+        font-weight: 700;
+        font-family: $base-font-family;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-size: 0.45em;
+        line-height: 20px;
+        display: block;
+    }
+}
+
+.heading-light {
+    font-family: $base-font-family;
+    font-weight: $heading-font-weight;
+}
+
+.lead {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.9em;
+}
+
+
+.owl-dots {
+    text-align: center;
+    .owl-dot {
+        display: inline-block;
+        margin: 0 5px;
+        span {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: none;
+            border: 3px solid $brand-primary;
+            transition: all 0.3s;
+        }
+
+        &.active {
+            span {
+                background: $brand-primary;
+            }
+        }
+    }
+}
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 1.8em;
+    height: 40px;
+    z-index: -1;
+
+    .owl-prev, .owl-next {
+        color: $brand-primary;
+        margin: 0;
+        position: absolute;
+        top: 0;
+
+        &.owl-prev {
+            left: -50px;
+        }
+        &.owl-next {
+            right: -50px;
+        }
+        &.disabled {
+            color: #aaa;
+        }
+    }
+}
